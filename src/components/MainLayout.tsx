@@ -15,7 +15,7 @@ import {
   SidebarInset
 } from "@/components/ui/sidebar";
 import Header from '@/components/Header';
-import { Book, Image, Heart, Star, Flag, Home, User, LineChart, Settings, Calendar } from 'lucide-react';
+import { Book, Image, Heart, Star, Flag, Home, User, LineChart, Settings, Calendar, BarChart2 } from 'lucide-react';
 
 const MainLayout = () => {
   const location = useLocation();
@@ -71,6 +71,15 @@ const MainLayout = () => {
                       <Link to="/calendar">
                         <Calendar />
                         <span>Calendar</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild isActive={isActive("/admin")} tooltip="Admin">
+                      <Link to="/admin">
+                        <BarChart2 />
+                        <span>Admin</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

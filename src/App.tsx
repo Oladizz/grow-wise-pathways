@@ -10,6 +10,9 @@ import UserProfile from "./pages/UserProfile";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import MainLayout from "./components/MainLayout";
+import Calendar from "./pages/Calendar";
+import Admin from "./pages/Admin";
+import AIChat from "./components/AIChat";
 
 const queryClient = new QueryClient();
 
@@ -25,11 +28,13 @@ const App = () => (
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="profile" element={<UserProfile />} />
             <Route path="settings" element={<Settings />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="calendar" element={<Calendar />} />
+            <Route path="admin" element={<Admin />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <AIChat />
     </TooltipProvider>
   </QueryClientProvider>
 );
