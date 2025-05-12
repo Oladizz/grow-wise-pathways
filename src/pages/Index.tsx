@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import Header from '@/components/Header';
 import TrackCard from '@/components/TrackCard';
 import AIRecommendation from '@/components/AIRecommendation';
 import AchievementBadge from '@/components/AchievementBadge';
@@ -29,9 +28,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <Header />
-      
+    <div className="min-h-full">
       <main className="flex-grow container mx-auto py-8 px-4">
         <section className="mb-10">
           <div className="text-center max-w-2xl mx-auto mb-8">
@@ -169,12 +166,6 @@ const Index = () => {
           </div>
         </section>
       </main>
-      
-      <footer className="bg-white py-6 border-t">
-        <div className="container mx-auto px-4 text-center text-gray-600 text-sm">
-          <p>© 2025 GrowWise | AI-Powered Progress Tracker</p>
-        </div>
-      </footer>
       
       <OnboardingModal
         isOpen={modalOpen}

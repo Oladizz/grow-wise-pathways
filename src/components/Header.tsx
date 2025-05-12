@@ -1,14 +1,24 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Bell, Award } from "lucide-react";
+import { Bell, Award, SidebarTrigger } from "lucide-react";
+import { useSidebar } from "@/components/ui/sidebar";
 
 const Header = () => {
+  const { toggleSidebar } = useSidebar();
+  
   return (
-    <header className="py-4 px-6 bg-white shadow-sm flex justify-between items-center">
+    <header className="py-3 px-6 bg-white shadow-sm flex justify-between items-center">
       <div className="flex items-center">
-        <h1 className="text-xl font-bold text-growth-primary mr-2">GrowWise</h1>
-        <span className="text-xs bg-growth-accent text-white px-2 py-0.5 rounded-full">Beta</span>
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          onClick={toggleSidebar} 
+          className="mr-2 md:hidden"
+          aria-label="Toggle Sidebar"
+        >
+          <SidebarTrigger className="h-5 w-5" />
+        </Button>
       </div>
       
       <div className="flex gap-2">
