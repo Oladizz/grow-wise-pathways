@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for our progress tracker
+				growth: {
+					primary: '#4CAF50',   // Green for growth
+					secondary: '#8BC34A', // Light green
+					accent: '#FFC107',    // Yellow accent for achievements
+				},
+				school: {
+					primary: '#2196F3',   // Blue for education
+					secondary: '#03A9F4', // Light blue
+				},
+				agriculture: {
+					primary: '#8BC34A',   // Green for plants
+					secondary: '#CDDC39', // Light green/yellow
+				},
+				community: {
+					primary: '#9C27B0',   // Purple for community
+					secondary: '#BA68C8', // Light purple
+				},
+				social: {
+					primary: '#FF5722',   // Orange for social
+					secondary: '#FF9800', // Light orange
 				}
 			},
 			borderRadius: {
@@ -84,11 +107,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'grow-up': {
+					'0%': { transform: 'scaleY(0)', opacity: '0' },
+					'100%': { transform: 'scaleY(1)', opacity: '1' }
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'grow-up': 'grow-up 0.5s ease-out',
+				'pulse-soft': 'pulse-soft 3s infinite ease-in-out',
+				'float': 'float 6s infinite ease-in-out'
 			}
 		}
 	},
