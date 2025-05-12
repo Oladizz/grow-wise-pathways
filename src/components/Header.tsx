@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Bell, Award, SidebarTrigger } from "lucide-react";
+import { Bell, Award, Menu } from "lucide-react";
 import { useSidebar } from "@/components/ui/sidebar";
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
           className="mr-2 md:hidden"
           aria-label="Toggle Sidebar"
         >
-          <SidebarTrigger className="h-5 w-5" />
+          <Menu className="h-5 w-5" />
         </Button>
       </div>
       

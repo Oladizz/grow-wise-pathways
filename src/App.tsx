@@ -5,6 +5,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Dashboard from "./pages/Dashboard";
+import UserProfile from "./pages/UserProfile";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import MainLayout from "./components/MainLayout";
 
@@ -19,6 +22,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Index />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="profile" element={<UserProfile />} />
+            <Route path="settings" element={<Settings />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Route>
           <Route path="*" element={<NotFound />} />

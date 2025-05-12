@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { 
   SidebarProvider, 
   Sidebar, 
@@ -15,9 +15,15 @@ import {
   SidebarInset
 } from "@/components/ui/sidebar";
 import Header from '@/components/Header';
-import { Book, Image, Heart, Star, Flag, Home } from 'lucide-react';
+import { Book, Image, Heart, Star, Flag, Home, User, LineChart, Settings, Calendar } from 'lucide-react';
 
 const MainLayout = () => {
+  const location = useLocation();
+  
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+  
   return (
     <SidebarProvider>
       <div className="flex h-screen w-full">
@@ -34,11 +40,47 @@ const MainLayout = () => {
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild isActive={true} tooltip="Home">
-                      <a href="/">
+                    <SidebarMenuButton asChild isActive={isActive("/")} tooltip="Home">
+                      <Link to="/">
                         <Home />
                         <span>Dashboard</span>
-                      </a>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild isActive={isActive("/dashboard")} tooltip="Progress">
+                      <Link to="/dashboard">
+                        <LineChart />
+                        <span>Progress</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild isActive={isActive("/profile")} tooltip="Profile">
+                      <Link to="/profile">
+                        <User />
+                        <span>Profile</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild isActive={isActive("/calendar")} tooltip="Calendar">
+                      <Link to="/calendar">
+                        <Calendar />
+                        <span>Calendar</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild isActive={isActive("/settings")} tooltip="Settings">
+                      <Link to="/settings">
+                        <Settings />
+                        <span>Settings</span>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 </SidebarMenu>
