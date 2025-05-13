@@ -1,10 +1,11 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart, LineChart, PieChart } from "@/components/ui/chart";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { BarChart } from "@/components/ui/charts/BarChart";
+import { LineChart } from "@/components/ui/charts/LineChart";
+import { PieChart } from "@/components/ui/charts/PieChart";
 
 const Admin = () => {
   const [timeRange, setTimeRange] = useState('week');
